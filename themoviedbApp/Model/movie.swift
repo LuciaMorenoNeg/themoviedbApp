@@ -11,22 +11,21 @@ import ObjectMapper
 struct Movie: ImmutableMappable {
     
     let id: Int
-    let title: String
-    let description: String!
-    let genre: Genre
-
+    let original_title: String
+   
     
     init(map: Map) throws {
         self.id = try map.value(Keys.id.rawValue)
-        self.title = try map.value(Keys.title.rawValue)
-        self.description = try map.value(Keys.description.rawValue)
-        self.genre = try map.value(Keys.genre.rawValue)
+        self.original_title = try map.value(Keys.original_title.rawValue)
+    }
+    
+    init(id: Int, original_title: String) {
+        self.id = id
+        self.original_title = original_title
     }
     
     enum Keys: String {
         case id
-        case title
-        case description
-        case genre
+        case original_title
     }
 }

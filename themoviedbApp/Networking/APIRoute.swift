@@ -21,7 +21,7 @@ protocol APIRoute: URLRequestConvertible {
 }
 
 extension APIRoute {
-    var baseURL: String { "https://developers.themoviedb.org/3/" }
+    var baseURL: String { "https://api.themoviedb.org/3/" }
     
     var encoding: Alamofire.ParameterEncoding {
         switch self.method {

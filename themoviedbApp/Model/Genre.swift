@@ -11,16 +11,29 @@ import ObjectMapper
 struct Genre: ImmutableMappable {
     
     let id: Int
-    let title: String
+    let name: String
 
     
     init(map: Map) throws {
         self.id = try map.value(Keys.id.rawValue)
-        self.title = try map.value(Keys.title.rawValue)
+        self.name = try map.value(Keys.name.rawValue)
+    }
+    
+    init(id: Int, name: String) {
+        self.id = id
+        self.name = name
     }
     
     enum Keys: String {
         case id
-        case title
+        case name
+    }
+    
+    func getName() -> String {
+        return name
+    }
+    
+    func getId() -> Int {
+        return id
     }
 }
