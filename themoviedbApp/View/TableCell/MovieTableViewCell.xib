@@ -10,25 +10,23 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="132" id="KGk-i7-Jjw" customClass="MovieTableViewCell" customModule="themoviedbApp" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieTableViewCell" rowHeight="132" id="KGk-i7-Jjw" customClass="MovieTableViewCell" customModule="themoviedbApp" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="132"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="132"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HN5-HO-BDB">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HN5-HO-BDB">
                         <rect key="frame" x="16" y="10" width="101" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="vVa-LA-98i">
-                        <rect key="frame" x="16" y="35" width="286" height="91"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="vVa-LA-98i">
+                        <rect key="frame" x="0.0" y="35" width="320" height="97"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bRs-B7-IRt">
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bRs-B7-IRt">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -36,6 +34,16 @@
                         </collectionViewFlowLayout>
                     </collectionView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="HN5-HO-BDB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="0EG-aY-oeA"/>
+                    <constraint firstAttribute="trailing" secondItem="HN5-HO-BDB" secondAttribute="trailing" constant="203" id="0ZJ-Fb-5S9"/>
+                    <constraint firstItem="HN5-HO-BDB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="M9E-PQ-9FC"/>
+                    <constraint firstAttribute="bottom" secondItem="vVa-LA-98i" secondAttribute="bottom" id="SFO-jq-ec8"/>
+                    <constraint firstAttribute="trailing" secondItem="vVa-LA-98i" secondAttribute="trailing" id="WUl-5A-wzf"/>
+                    <constraint firstItem="vVa-LA-98i" firstAttribute="top" secondItem="HN5-HO-BDB" secondAttribute="bottom" constant="4" id="ZXO-7e-MoB"/>
+                    <constraint firstItem="vVa-LA-98i" firstAttribute="top" secondItem="HN5-HO-BDB" secondAttribute="bottom" constant="4" id="c25-xR-f8Q"/>
+                    <constraint firstItem="vVa-LA-98i" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="oKN-0Y-wr0"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>

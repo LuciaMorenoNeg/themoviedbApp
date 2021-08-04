@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 
 class MovieCollectionViewCell: UICollectionViewCell {
     static let identifier = "MovieCollectionViewCell"
