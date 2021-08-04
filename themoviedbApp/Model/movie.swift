@@ -8,24 +8,28 @@
 import Foundation
 import ObjectMapper
 
-struct Movie: ImmutableMappable {
+class Movie: Mappable {
+    required init?(map: Map) {
+    }
     
-    let id: Int
-    let original_title: String
+    var id: Int!
+    var original_title: String!
+    var poster_path : String!
    
     
-    init(map: Map) throws {
-        self.id = try map.value(Keys.id.rawValue)
-        self.original_title = try map.value(Keys.original_title.rawValue)
+    func mapping(map: Map) {
+        self.id <- map["id"]
+        self.original_title <- map["original_title"]
+        self.poster_path <- map["poster_path"]
     }
     
-    init(id: Int, original_title: String) {
+    
+    init(id: Int, original_title : String, poster_path: String){
         self.id = id
         self.original_title = original_title
+        self.poster_path = poster_path
+        
     }
     
-    enum Keys: String {
-        case id
-        case original_title
-    }
+
 }

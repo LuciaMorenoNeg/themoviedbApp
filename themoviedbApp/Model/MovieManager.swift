@@ -7,9 +7,9 @@
 
 import Foundation
 class MovieManager {
-    private var genres:[Genre] = []
-    public var genresShow:[Genre] = []
-    public var movies:[Movie] = []
+    private var listGenres:[Genre] = []
+    private var genresShow:[Genre] = []
+    private var movies:[Movie] = []
     private var error:String = ""
     
     static let instance: MovieManager = MovieManager()
@@ -18,32 +18,50 @@ class MovieManager {
         self.retrieveData()
     }
     
-    func loadInitialData(oncompletion: @escaping (_ error: Error?)->()) {
-        APIClient.shared.requestItems(request: APIRouteOptions.getGenres, responseKey: "", onCompletion: {
+    func loadInitialData(onCompletation: @escaping (_ listGenres: [Genre]) ->() ) {
+        APIClient.shared.requestItems(request: APIRouteOptions.getGenres, responseKey: "genres", onCompletion: {
             (result:Result<[Genre], Error>) in
-            switch result {
-            case .success(let genre): self.genres = genre
-            case .failure(let error): self.error = error.localizedDescription
+            switch (result) {
+            case .success(let genre): self.listGenres = genre
+                self.genresShow = self.loadShowGenres(genres: self.listGenres)
+                onCompletation(self.genresShow)
+            case .failure(let error): print(error)
             }
         })
+    }
     
-        genres.forEach { genre in
+    func loadShowGenres(genres: [Genre]) -> [Genre] {
+        listGenres.forEach { genre in
             if genre.getName() == "Action" || genre.getName() == "Adventure" || genre.getName() == "Animation" || genre.getName() == "Family" || genre.getName() == "History" || genre.getName() == "Music" || genre.getName() == "Romance" || genre.getName() == "Comedy"{
                 genresShow.append(genre)
             }
         }
-        genresShow.forEach { genre in
-                APIClient.shared.requestItems(request: APIRouteOptions.moviesByGenre(genreId: genre.getId()), responseKey: "", onCompletion: {
+        return genresShow
+    }
+    
+    func loadInitialDataMovies(oneGenre: Genre, onCompletation: @escaping (_ moviesList: [Movie]) ->()) {
+            APIClient.shared.requestItems(request: APIRouteOptions.moviesByGenre(genreId: oneGenre.getId()), responseKey: "results", onCompletion: {
                 (result:Result<[Movie], Error>) in
-                switch result {
+                switch (result) {
                 case .success(let movie): self.movies = movie
-                case .failure(let error): self.error = error.localizedDescription
+                    onCompletation(self.movies)
+                case .failure(let error): print(error)
                 }
             })
-        }
     }
     
     func retrieveData(){
         
     }
+    
+    func getMovieDetails(id: String) -> Movie {
+        APIClient.shared.requestItem(request: APIRouteOptions.movieDetails(movie_id: id), responseKey: "", onCompletion: {
+            (result:Result<Movie, Error>) in
+            switch result {
+            case .success(let movie): self.movies.append(movie)
+            case .failure(let error): self.error = error.localizedDescription
+            }
+        })
+        return movies[0]
+}
 }

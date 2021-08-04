@@ -11,7 +11,6 @@ import ObjectMapper
 import AlamofireObjectMapper
 
 class APIClient {
-    
     typealias APIResult = Result<Any, Error>
     typealias APIResponse = (APIResult) -> Void
     
@@ -35,7 +34,7 @@ class APIClient {
     }
     
     func requestItems<T: BaseMappable>(request: APIRoute, responseKey: String? = nil, onCompletion: @escaping (Result<[T], Error>) -> Void) {
-        AF.request(request).validate().responseArray { (response: DataResponse<[T], AFError>) in
+        AF.request(request).validate().responseArray (keyPath:responseKey){ (response: DataResponse<[T], AFError>) in
             switch response.result {
             case .success(let array): onCompletion(.success(array))
             case .failure(let error as Error): onCompletion(.failure(error))

@@ -12,14 +12,13 @@ enum APIRouteSessionPolicy {
     case privateDomain, publicDomain
 }
 
-let apiKey = ""
+let apiKey = "9f7e044a3285c2d111a39c914811df15"
 
 protocol APIRoute: URLRequestConvertible {
     var method: HTTPMethod { get }
     var encoding: Alamofire.ParameterEncoding { get }
     var sessionPolicy: APIRouteSessionPolicy { get }
 }
-
 extension APIRoute {
     var baseURL: String { "https://api.themoviedb.org/3/" }
     
@@ -30,16 +29,27 @@ extension APIRoute {
         }
     }
 
-    func encoded(path: String, params: [String: Any]) throws -> URLRequest {
+    func encoded(path: String, params: [String:Any]) throws -> URLRequest {
         let encodedPath = path.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
-        var urlRequest = URLRequest(url: URL(string: baseURL + encodedPath)!)
-        urlRequest.httpMethod = self.method.rawValue
-
         var params = params
-        if sessionPolicy == .privateDomain {
-            params["api_key"] = apiKey
+        var url = URL(string: baseURL + encodedPath)!
+            switch self.method {
+            case .get, .delete, .patch:
+                params["api_key"] = apiKey
+                if sessionPolicy == .privateDomain {
+                    params["session_id"] = "" //SESSION ID
+                }
+            default:
+                var urlComponents = URLComponents(string: baseURL + encodedPath)!
+                urlComponents.queryItems = [URLQueryItem(name: "api_key", value: apiKey /* API KEY */)]
+                if sessionPolicy == .privateDomain {
+                    urlComponents.queryItems?.append(URLQueryItem(name: "session_id", value: "" /* SESSION ID */))
+                }
+                url = try urlComponents.asURL()
         }
         
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = self.method.rawValue
         return try self.encoding.encode(urlRequest, with: params)
     }
 }

@@ -8,32 +8,30 @@
 import Foundation
 import ObjectMapper
 
-struct Genre: ImmutableMappable {
+class Genre: Mappable {
+    var id: Int!
+    var name : String!
     
-    let id: Int
-    let name: String
-
-    
-    init(map: Map) throws {
-        self.id = try map.value(Keys.id.rawValue)
-        self.name = try map.value(Keys.name.rawValue)
+    required init?(map: Map) {
+       
     }
     
-    init(id: Int, name: String) {
+    func mapping(map: Map) {
+        self.id <- map["id"]
+        self.name <- map["name"]
+    }
+    
+    
+    init(id: Int, name : String ){
         self.id = id
         self.name = name
     }
     
-    enum Keys: String {
-        case id
-        case name
-    }
-    
     func getName() -> String {
-        return name
+        return self.name
     }
     
-    func getId() -> Int {
-        return id
+    func getId() -> Int{
+        return self.id
     }
 }

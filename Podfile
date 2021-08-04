@@ -10,5 +10,6 @@ target 'themoviedbApp' do
 pod 'Alamofire', '~> 5.0.0-rc.2'
 pod 'ObjectMapper'
 pod 'AlamofireObjectMapper'
+pod 'Kingfisher', '~> 6.0'
 
 end

@@ -7,10 +7,19 @@
 
 import UIKit
 
-class MovieTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+class MovieTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = movieCollectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.identifier, for: indexPath) as! MovieCollectionViewCell
+        return cell
+    }
+    
     
     static let identifier = "MovieTableViewCell"
-    private var movies:[Movie] = []
     
     @IBOutlet weak var genreLabel: UILabel!
     @IBOutlet weak var movieCollectionView: UICollectionView!
@@ -22,10 +31,9 @@ class MovieTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectio
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        /*movieCollectionView.register(MovieCollectionViewCell.nib(), forCellWithReuseIdentifier: MovieCollectionViewCell.identifier)
+        movieCollectionView.register(MovieCollectionViewCell.nib(), forCellWithReuseIdentifier: MovieCollectionViewCell.identifier)
         movieCollectionView.delegate = self
-        movieCollectionView.dataSource = self*/
+        movieCollectionView.dataSource = self
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -33,23 +41,14 @@ class MovieTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectio
         // Configure the view for the selected state
     }
     
-    func configure(label: String, movies: [Movie]){
+    func configure(label: String){
         self.genreLabel.text = label
-        self.movies = movies
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        movies.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.identifier, for: indexPath) as!
-            MovieCollectionViewCell
-        cell.configure(label: movies[indexPath.row].original_title)
-        return cell
-    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 250, height: 250)
     }
+    
+    
 }

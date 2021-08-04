@@ -2,15 +2,16 @@
 //  MovieCollectionViewCell.swift
 //  themoviedbApp
 //
-//  Created by Lucia Moreno on 27/7/21.
+//  Created by Lucia Moreno on 4/8/21.
 //
 
 import UIKit
 
+
 class MovieCollectionViewCell: UICollectionViewCell {
     static let identifier = "MovieCollectionViewCell"
     
-    @IBOutlet weak var nameMovieLabel: UILabel!
+    @IBOutlet weak var movieImage: UIImageView!
     
     static func nib() -> UINib {
         return UINib(nibName: "MovieCollectionViewCell", bundle: nil)
@@ -21,8 +22,6 @@ class MovieCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func configure(label: String){
-        self.nameMovieLabel.text = label
-    }
+    
 
 }
