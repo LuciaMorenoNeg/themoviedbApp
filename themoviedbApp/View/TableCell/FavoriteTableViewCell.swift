@@ -1,5 +1,5 @@
 //
-//  SearchResultTableViewCell.swift
+//  FavoriteTableViewCell.swift
 //  themoviedbApp
 //
 //  Created by Lucia Moreno on 4/8/21.
@@ -7,20 +7,18 @@
 
 import UIKit
 
-class SearchResultTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var searchImage: UIImageView!
-    @IBOutlet weak var raitingImage: UIImageView!
-    @IBOutlet weak var searchLabel: UILabel!
+class FavoriteTableViewCell: UITableViewCell {
     
-    static let identifier = "SearchResultTableViewCell"
+    @IBOutlet weak var favoriteMovieImage: UIImageView!
+    static let identifier = "FavoriteTableViewCell"
     
     static func nib() -> UINib {
-        return UINib(nibName: "SearchResultTableViewCell", bundle: nil)
+        return UINib(nibName: "FavoriteTableViewCell", bundle: nil)
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

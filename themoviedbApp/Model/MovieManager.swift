@@ -50,10 +50,6 @@ class MovieManager {
             })
     }
     
-    func retrieveData(){
-        
-    }
-    
     func getMovieDetails(id: String) -> Movie {
         APIClient.shared.requestItem(request: APIRouteOptions.movieDetails(movie_id: id), responseKey: "", onCompletion: {
             (result:Result<Movie, Error>) in
@@ -75,4 +71,28 @@ class MovieManager {
                 }
             })
     }
+    func listFavorite(onCompletation: @escaping (_ moviesList: [Movie]) ->()) {
+        APIClient.shared.requestItems(request: APIRouteOptions.listFavorite, responseKey: "results", onCompletion: {
+            (result:Result<[Movie], Error>) in
+            switch (result) {
+            case .success(let movie): self.movies = movie
+                onCompletation(self.movies)
+            case .failure(let error): print(error)
+            }
+        })
+}
+    func movieDetails(id: String, onCompletation: @escaping (_ movies: Movie) ->()) {
+        APIClient.shared.requestItem(request: APIRouteOptions.movieDetails(movie_id: id), responseKey: "", onCompletion: {
+            (result:Result<Movie, Error>) in
+            switch (result) {
+            case .success(let movie): onCompletation(movie)
+            case .failure(let error): print(error)
+            }
+        })
+}
+    
+    func retrieveData(){
+        
+    }
+    
 }
