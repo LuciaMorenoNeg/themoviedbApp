@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iVw-ZJ-iKg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -93,7 +93,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vPu-dG-EZ5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-442" y="-339"/>
+            <point key="canvasLocation" x="-188" y="-717"/>
         </scene>
         <!--Item-->
         <scene sceneID="tne-QT-ifu">
@@ -126,6 +126,36 @@
             </objects>
             <point key="canvasLocation" x="-1123" y="451"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="tbM-IG-9uC">
+            <objects>
+                <viewController id="kBd-8S-Lne" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yZu-no-4XU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ckN-AI-xsv" customClass="MoviesByGenreViewController" customModule="themoviedbApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Pqf-4R-80E"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ckN-AI-xsv" firstAttribute="top" secondItem="Pqf-4R-80E" secondAttribute="top" id="3IE-Oi-zYf"/>
+                            <constraint firstItem="ckN-AI-xsv" firstAttribute="leading" secondItem="Pqf-4R-80E" secondAttribute="leading" id="UiV-Jg-bb7"/>
+                            <constraint firstItem="Pqf-4R-80E" firstAttribute="bottom" secondItem="ckN-AI-xsv" secondAttribute="bottom" id="gHO-5l-vzp"/>
+                            <constraint firstItem="Pqf-4R-80E" firstAttribute="trailing" secondItem="ckN-AI-xsv" secondAttribute="trailing" id="lXB-7l-VDt"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="moviesByGenreTableView" destination="ckN-AI-xsv" id="A5b-Pq-uOq"/>
+                        </connections>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ejC-0H-vwi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-367" y="451"/>
+        </scene>
         <!--Item 2-->
         <scene sceneID="PcQ-eE-CRp">
             <objects>
@@ -155,7 +185,8 @@
                             <constraint firstItem="cee-vj-z1k" firstAttribute="top" secondItem="Xdc-FA-Oyn" secondAttribute="top" constant="30" id="vEh-c9-Fhr"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="pus-tp-tBg"/>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="vY1-f9-vuD" userLabel="Item 1"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="searchBar" destination="cee-vj-z1k" id="ABF-F1-rSJ"/>
                         <outlet property="searchTableView" destination="e4v-hy-LpW" id="Fcc-8K-4P9"/>
@@ -191,9 +222,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="QmQ-bl-KRB" kind="relationship" relationship="viewControllers" id="Zj4-qw-wcL"/>
-                        <segue destination="an5-gh-Xyh" kind="relationship" relationship="viewControllers" id="Ccd-3P-Xnh"/>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="9Tm-hU-rEf"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="5dD-VS-C8w"/>
+                        <segue destination="QmQ-bl-KRB" kind="relationship" relationship="viewControllers" id="Nsd-Rp-DHo"/>
+                        <segue destination="an5-gh-Xyh" kind="relationship" relationship="viewControllers" id="adU-Rm-0Md"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4UX-1w-9i2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -3,4 +3,70 @@
    uuid = "DAAB1430-18FE-44A7-8DF5-42396BA450DC"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F90304A1-15A4-4D28-A6FC-7DB48D073851"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "themoviedbApp/Controller/SearchViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "findMoviesForSearch(textQuery:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F90304A1-15A4-4D28-A6FC-7DB48D073851 - e1c3b8283ab4470f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "themoviedbApp.SearchViewController.findMoviesForSearch(textQuery: Swift.String) -&gt; ()"
+                  moduleName = "themoviedbApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lu/Desktop/themoviedbApp/themoviedbApp/Controller/SearchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "37">
+               </Location>
+               <Location
+                  uuid = "F90304A1-15A4-4D28-A6FC-7DB48D073851 - bb2f2a9733d8d9df"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;themoviedbApp.Movie&gt;) -&gt; () in themoviedbApp.SearchViewController.findMoviesForSearch(textQuery: Swift.String) -&gt; ()"
+                  moduleName = "themoviedbApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lu/Desktop/themoviedbApp/themoviedbApp/Controller/SearchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "87">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "28058C0A-50A6-44BF-A762-7E6F567DE84E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "themoviedbApp/Controller/SearchViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "findMoviesForSearch(textQuery:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

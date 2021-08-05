@@ -23,6 +23,7 @@
                         <color key="tintColor" systemColor="tertiarySystemBackgroundColor"/>
                         <state key="normal" title="See more"/>
                         <connections>
+                            <action selector="onClick:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Wxh-43-41Y"/>
                             <action selector="seeMoreButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="RPm-Ft-3WJ"/>
                         </connections>
                     </button>
@@ -35,6 +36,9 @@
                 <constraint firstItem="LZC-1Z-Y7v" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="1Qo-bs-R29"/>
             </constraints>
             <size key="customSize" width="167" height="101"/>
+            <connections>
+                <outlet property="seeMoreButton" destination="LZC-1Z-Y7v" id="nz0-6l-NXi"/>
+            </connections>
             <point key="canvasLocation" x="77.536231884057983" y="78.683035714285708"/>
         </collectionViewCell>
     </objects>

@@ -32,7 +32,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     }
     
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
             print("searchText \(searchText)")
         findMoviesForSearch(textQuery: searchText)
         print(searchText)

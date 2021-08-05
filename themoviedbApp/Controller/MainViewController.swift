@@ -9,7 +9,7 @@ import Foundation
 import Kingfisher
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController{
     
     var movieManager: MovieManager = MovieManager.instance
     
@@ -87,7 +87,9 @@ extension MainViewController: UITableViewDataSource {
     }
 }
 
-extension MainViewController: UITableViewDelegate {}
+extension MainViewController: UITableViewDelegate {
+    
+}
 
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -102,7 +104,6 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == 10  {
             let cellSeeMore = collectionView.dequeueReusableCell(withReuseIdentifier: SeeMoreCollectionViewCell.identifier, for: indexPath) as! SeeMoreCollectionViewCell
-            
             return cellSeeMore
         } else {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.identifier, for: indexPath) as!
@@ -121,6 +122,9 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
         
     }
+    //func collectionView(collectionviewcell: TapMoreCollectionViewCell?, index: Int, didTappedInTableViewCell: MovieTableViewCell) {
+        
+    //}
     
     
 }
