@@ -64,4 +64,15 @@ class MovieManager {
         })
         return movies[0]
 }
+    
+    func moviesByName(textQuery: String, onCompletation: @escaping (_ moviesList: [Movie]) ->()) {
+            APIClient.shared.requestItems(request: APIRouteOptions.movieByName(query: textQuery), responseKey: "results", onCompletion: {
+                (result:Result<[Movie], Error>) in
+                switch (result) {
+                case .success(let movie): self.movies = movie
+                    onCompletation(self.movies)
+                case .failure(let error): print(error)
+                }
+            })
+    }
 }

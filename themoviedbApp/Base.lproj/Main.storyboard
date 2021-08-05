@@ -67,11 +67,19 @@
                                 <rect key="frame" x="0.0" y="74" width="414" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e4v-hy-LpW">
+                                <rect key="frame" x="0.0" y="137" width="414" height="676"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Xdc-FA-Oyn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="cee-vj-z1k" firstAttribute="trailing" secondItem="Xdc-FA-Oyn" secondAttribute="trailing" id="JN5-Qr-BVW"/>
+                            <constraint firstItem="e4v-hy-LpW" firstAttribute="top" secondItem="cee-vj-z1k" secondAttribute="bottom" constant="12" id="Q6s-zm-Zuc"/>
+                            <constraint firstItem="Xdc-FA-Oyn" firstAttribute="bottom" secondItem="e4v-hy-LpW" secondAttribute="bottom" id="SHQ-Wh-kc6"/>
+                            <constraint firstItem="Xdc-FA-Oyn" firstAttribute="trailing" secondItem="e4v-hy-LpW" secondAttribute="trailing" id="clL-yk-48E"/>
+                            <constraint firstItem="e4v-hy-LpW" firstAttribute="leading" secondItem="Xdc-FA-Oyn" secondAttribute="leading" id="dtt-xv-4eR"/>
                             <constraint firstItem="cee-vj-z1k" firstAttribute="leading" secondItem="Xdc-FA-Oyn" secondAttribute="leading" id="fqb-eC-BVR"/>
                             <constraint firstItem="cee-vj-z1k" firstAttribute="top" secondItem="Xdc-FA-Oyn" secondAttribute="top" constant="30" id="vEh-c9-Fhr"/>
                         </constraints>
@@ -79,6 +87,7 @@
                     <tabBarItem key="tabBarItem" title="Item 2" id="pus-tp-tBg"/>
                     <connections>
                         <outlet property="searchBar" destination="cee-vj-z1k" id="ABF-F1-rSJ"/>
+                        <outlet property="searchTable" destination="e4v-hy-LpW" id="k4h-33-B1s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dAP-WD-dnj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

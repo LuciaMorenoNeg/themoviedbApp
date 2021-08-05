@@ -15,6 +15,7 @@ enum APIRouteOptions: APIRoute{
     case requestToken
     case validateToken
     case movieDetails(movie_id: String)
+    case movieByName(query: String)
 
     var method : HTTPMethod { get {
         switch self{
@@ -24,6 +25,7 @@ enum APIRouteOptions: APIRoute{
             case .requestToken: return HTTPMethod.get
             case .validateToken: return HTTPMethod.post
             case .movieDetails: return HTTPMethod.get
+            case .movieByName: return HTTPMethod.get
         }
      }
     }
@@ -36,6 +38,7 @@ enum APIRouteOptions: APIRoute{
             case .requestToken: return APIRouteSessionPolicy.publicDomain
             case .validateToken: return APIRouteSessionPolicy.publicDomain
             case .movieDetails: return APIRouteSessionPolicy.publicDomain
+            case .movieByName: return APIRouteSessionPolicy.publicDomain
         }
      }
     }
@@ -47,7 +50,8 @@ enum APIRouteOptions: APIRoute{
             case .login: return  try encoded(path: "authentication/session/new", params: ["api_key": apiKey])
             case .requestToken: return  try encoded(path: "authentication/token/new", params: ["api_key": apiKey])
             case .validateToken: return  try encoded(path: "/authentication/token/validate_with_login", params: ["api_key": apiKey])
-            case .movieDetails(movie_id: let id): return try encoded(path: "/movie/", params: ["movie_id" : id, "api_key": apiKey])
+            case .movieDetails(movie_id: let id): return try encoded(path: "movie/", params: ["movie_id" : id, "api_key": apiKey])
+            case .movieByName(query: let query): return try encoded(path: "search/movie", params: ["query" : query, "api_key": apiKey])
             
         }
     }
