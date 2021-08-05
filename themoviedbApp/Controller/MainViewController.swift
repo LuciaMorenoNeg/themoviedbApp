@@ -17,6 +17,8 @@ class MainViewController: UIViewController {
     var genreMovies: [Int: [Movie]] = [:]
 
     var movies: [Movie] = []
+    var onlySomeMovies: [Movie] = []
+
     var genres: [Genre] = []
     
     @IBOutlet weak var movietableView: UITableView!
@@ -24,7 +26,6 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         movietableView.delegate = self
         movietableView.dataSource = self
         movietableView.register(UINib(nibName: "MovieTableViewCell", bundle: nil), forCellReuseIdentifier: "MovieTableViewCell")
@@ -38,7 +39,7 @@ class MainViewController: UIViewController {
                     self.movies = moviesList
                     let indexOfGenre = self.genres.firstIndex(where: {$0.name == genre.name})
                     let collections = (self.genreCollections as NSDictionary).allKeys(for: indexOfGenre!) as! [UICollectionView]
-                    self.genreMovies[indexOfGenre!] = self.movies
+                    self.genreMovies[indexOfGenre!] = self.getSomeMovies(intMovies: 10, movies: self.movies)
                     for collection in collections{
                         collection.reloadData()
                     }
@@ -46,6 +47,15 @@ class MainViewController: UIViewController {
                 }
             }
         }
+        
+        
+        }
+    func getSomeMovies(intMovies: Int, movies: [Movie]) -> [Movie]{
+        var moviesResponse : [Movie] = []
+        for i in 0 ..< 10 {
+            moviesResponse.append(self.movies[i])
+        }
+        return moviesResponse
     }
 }
 
@@ -57,12 +67,18 @@ extension MainViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: MovieTableViewCell = self.movietableView.dequeueReusableCell(withIdentifier: "MovieTableViewCell" ) as! MovieTableViewCell
+        
         var gendreName = "vacio"
         gendreName = self.genres[indexPath.row].name
         cell.configure(label: gendreName)
         genreCollections[cell.movieCollectionView] = indexPath.row
+        
         cell.movieCollectionView.dataSource = self
         cell.movieCollectionView.delegate = self
+        
+        cell.seeMoreCollectionViewCell.dataSource = self
+        cell.seeMoreCollectionViewCell.delegate = self
+        
         return cell
     }
     
@@ -76,21 +92,34 @@ extension MainViewController: UITableViewDelegate {}
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let gendreIndex = self.genreCollections[collectionView] else { return 0 }
-        return (genreMovies[gendreIndex]?.count) ?? 0
-        //busco en el diccionario el indice del genero y traego las movies
+        var count : Int = 0
+        if genreMovies[gendreIndex] != nil{
+        count = genreMovies[gendreIndex]!.count
+        }
+        return (count + 1)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if indexPath.row == 10  {
+            let cellSeeMore = collectionView.dequeueReusableCell(withReuseIdentifier: SeeMoreCollectionViewCell.identifier, for: indexPath) as! SeeMoreCollectionViewCell
+            
+            return cellSeeMore
+        } else {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.identifier, for: indexPath) as!
             MovieCollectionViewCell
+        
         guard let genreIndex = self.genreCollections[collectionView] else{
             return cell
         }
         
-        let urlString = "https://image.tmdb.org/t/p/w500" + (self.genreMovies[genreIndex]?[indexPath.row].poster_path)!
-        let url = URL(string: urlString)
-        cell.movieImage.kf.setImage(with: url)
+        if (self.genreMovies[genreIndex] != nil){
+            let urlString = "https://image.tmdb.org/t/p/w500" + (self.genreMovies[genreIndex]?[indexPath.row].poster_path)!
+            let url = URL(string: urlString)
+            cell.movieImage.kf.setImage(with: url)
+        }
         return cell
+    }
+        
     }
     
     

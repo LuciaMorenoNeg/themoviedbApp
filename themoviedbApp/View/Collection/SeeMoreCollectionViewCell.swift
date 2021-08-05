@@ -9,6 +9,10 @@ import UIKit
 
 class SeeMoreCollectionViewCell: UICollectionViewCell {
 
+    
+    @IBAction func seeMoreButton(_ sender: UIButton) {
+        
+    }
     static let identifier = "SeeMoreCollectionViewCell"
     
     static func nib() -> UINib {
@@ -19,5 +23,7 @@ class SeeMoreCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    
 
 }

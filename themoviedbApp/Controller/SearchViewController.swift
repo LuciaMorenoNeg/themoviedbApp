@@ -30,6 +30,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             self.movies = moviesList
             self.searchTableView.reloadData()
     }
+    }
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
             print("searchText \(searchText)")
@@ -37,16 +38,6 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         print(searchText)
         }
         
-        
-        }
-     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-            print("searchText \(searchBar.text)")
-            self.movieManager.moviesByName(textQuery: searchBar.text!) { moviesList in
-                self.movies = moviesList
-                self.searchTableView.reloadData()
-            }
-        }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.movies.count
     }

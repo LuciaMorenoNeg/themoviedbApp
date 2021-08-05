@@ -10,33 +10,42 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SeeMoreCollectionViewCell" customModule="themoviedbApp" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SeeMoreCollectionViewCell" id="gTV-IL-0wX" customClass="SeeMoreCollectionViewCell" customModule="themoviedbApp" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="167" height="101"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="167" height="101"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucP-CK-8O5">
-                        <rect key="frame" x="60" y="35" width="47" height="30"/>
-                        <state key="normal" title="Button"/>
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZC-1Z-Y7v">
+                        <rect key="frame" x="40" y="35" width="66" height="30"/>
+                        <color key="backgroundColor" systemColor="secondaryLabelColor"/>
+                        <color key="tintColor" systemColor="tertiarySystemBackgroundColor"/>
+                        <state key="normal" title="See more"/>
+                        <connections>
+                            <action selector="seeMoreButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="RPm-Ft-3WJ"/>
+                        </connections>
                     </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
             <constraints>
-                <constraint firstItem="ucP-CK-8O5" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="CRp-Zw-gul"/>
-                <constraint firstAttribute="bottom" secondItem="ucP-CK-8O5" secondAttribute="bottom" constant="36" id="kJf-dM-Adw"/>
-                <constraint firstItem="ucP-CK-8O5" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="60" id="pG9-jp-Wcx"/>
-                <constraint firstItem="ucP-CK-8O5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="35" id="wC1-lP-2x7"/>
+                <constraint firstItem="LZC-1Z-Y7v" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="0em-0y-IRn"/>
+                <constraint firstItem="LZC-1Z-Y7v" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="1Qo-bs-R29"/>
             </constraints>
             <size key="customSize" width="167" height="101"/>
             <point key="canvasLocation" x="77.536231884057983" y="78.683035714285708"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiarySystemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
