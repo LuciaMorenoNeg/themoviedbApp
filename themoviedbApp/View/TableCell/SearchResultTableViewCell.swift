@@ -10,9 +10,8 @@ import UIKit
 class SearchResultTableViewCell: UITableViewCell {
 
     @IBOutlet weak var searchImage: UIImageView!
-    @IBOutlet weak var raitingImage: UIImageView!
     @IBOutlet weak var searchLabel: UILabel!
-    
+    @IBOutlet weak var raitingLabel: UILabel!
     static let identifier = "SearchResultTableViewCell"
     
     static func nib() -> UINib {

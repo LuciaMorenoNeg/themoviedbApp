@@ -13,7 +13,6 @@ enum APIRouteSessionPolicy {
 }
 
 let apiKey = "9f7e044a3285c2d111a39c914811df15"
-//let session_id = Settings.shared.session_id
 
 protocol APIRoute: URLRequestConvertible {
     var method: HTTPMethod { get }

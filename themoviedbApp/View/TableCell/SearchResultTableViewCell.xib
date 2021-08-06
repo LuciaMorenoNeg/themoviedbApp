@@ -17,37 +17,39 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="39I-Fj-rZf">
-                        <rect key="frame" x="51" y="33" width="240" height="128"/>
+                        <rect key="frame" x="15" y="15" width="130" height="176"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="130" id="ts3-iU-Uac"/>
+                        </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrS-sy-FV1">
-                        <rect key="frame" x="150" y="0.0" width="42" height="21"/>
+                        <rect key="frame" x="155" y="25" width="172" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w5Q-HZ-Thu">
-                        <rect key="frame" x="124" y="169" width="94" height="37"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="37" id="Bc1-DM-LfS"/>
-                        </constraints>
-                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9oA-Jh-l1O">
+                        <rect key="frame" x="155" y="65.5" width="152" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="jrS-sy-FV1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="C2x-PP-X64"/>
-                    <constraint firstAttribute="trailing" secondItem="39I-Fj-rZf" secondAttribute="trailing" constant="51" id="HNW-FV-gwX"/>
-                    <constraint firstAttribute="trailing" secondItem="jrS-sy-FV1" secondAttribute="trailing" constant="150" id="LcO-Vs-cet"/>
-                    <constraint firstItem="39I-Fj-rZf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="51" id="M9k-5g-jqg"/>
-                    <constraint firstAttribute="trailing" secondItem="w5Q-HZ-Thu" secondAttribute="trailing" constant="124" id="c6a-s2-jlJ"/>
-                    <constraint firstItem="jrS-sy-FV1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="150" id="gb0-Zu-VMM"/>
-                    <constraint firstItem="w5Q-HZ-Thu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="124" id="hr2-Qd-JMX"/>
-                    <constraint firstItem="w5Q-HZ-Thu" firstAttribute="top" secondItem="39I-Fj-rZf" secondAttribute="bottom" constant="8" symbolic="YES" id="yPx-tf-xGJ"/>
-                    <constraint firstItem="39I-Fj-rZf" firstAttribute="top" secondItem="jrS-sy-FV1" secondAttribute="bottom" constant="12" id="zch-WL-x1u"/>
-                    <constraint firstAttribute="bottom" secondItem="w5Q-HZ-Thu" secondAttribute="bottom" id="zjf-sM-l7r"/>
+                    <constraint firstItem="jrS-sy-FV1" firstAttribute="leading" secondItem="39I-Fj-rZf" secondAttribute="trailing" constant="10" id="2i5-mT-ur6"/>
+                    <constraint firstItem="jrS-sy-FV1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="3ZR-qF-lYQ"/>
+                    <constraint firstItem="9oA-Jh-l1O" firstAttribute="top" secondItem="jrS-sy-FV1" secondAttribute="bottom" constant="20" id="4n4-1J-3Ir"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="9oA-Jh-l1O" secondAttribute="trailing" constant="15" id="7Ja-q4-ICy"/>
+                    <constraint firstAttribute="trailing" secondItem="jrS-sy-FV1" secondAttribute="trailing" constant="15" id="ALD-XJ-zky"/>
+                    <constraint firstItem="39I-Fj-rZf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="Jm2-Md-fkz"/>
+                    <constraint firstAttribute="bottom" secondItem="39I-Fj-rZf" secondAttribute="bottom" constant="15" id="ODm-cl-dle"/>
+                    <constraint firstItem="39I-Fj-rZf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="ihu-mq-piS"/>
+                    <constraint firstItem="9oA-Jh-l1O" firstAttribute="leading" secondItem="39I-Fj-rZf" secondAttribute="trailing" constant="10" id="xmc-5V-rK7"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="raitingImage" destination="w5Q-HZ-Thu" id="eH6-e5-MT8"/>
+                <outlet property="raitingLabel" destination="9oA-Jh-l1O" id="E4Y-HN-oMf"/>
                 <outlet property="searchImage" destination="39I-Fj-rZf" id="w3R-zh-xPV"/>
                 <outlet property="searchLabel" destination="jrS-sy-FV1" id="iz3-Uj-nuT"/>
             </connections>

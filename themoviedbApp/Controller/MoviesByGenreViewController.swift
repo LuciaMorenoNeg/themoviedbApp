@@ -6,8 +6,7 @@
 //
 import Foundation
 import UIKit
-
-import Foundation
+import Kingfisher
 
 class MoviesByGenreViewController : UIViewController {
     @IBOutlet weak var moviesByGenreTableView: UITableView!

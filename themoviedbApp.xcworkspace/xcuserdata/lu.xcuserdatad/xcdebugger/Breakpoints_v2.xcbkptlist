@@ -14,8 +14,8 @@
             filePath = "themoviedbApp/Controller/SearchViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "findMoviesForSearch(textQuery:)"
             landmarkType = "7">
             <Locations>
@@ -62,8 +62,8 @@
             filePath = "themoviedbApp/Controller/SearchViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "findMoviesForSearch(textQuery:)"
             landmarkType = "7">
          </BreakpointContent>

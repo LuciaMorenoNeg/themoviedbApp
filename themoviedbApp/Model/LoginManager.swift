@@ -23,8 +23,6 @@ class LoginManager {
             }
         })
     }
-    //validate token se le pasa username password request_token
-    //solamente tenes que validar si es 200 o no
     
     func validateToken(onCompletation: @escaping (_ token: Token) ->()){
         APIClient.shared.requestItem(request: APIRouteOptions.validateToken , responseKey: "", onCompletion: {
