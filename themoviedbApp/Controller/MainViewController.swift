@@ -104,6 +104,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == 10  {
             let cellSeeMore = collectionView.dequeueReusableCell(withReuseIdentifier: SeeMoreCollectionViewCell.identifier, for: indexPath) as! SeeMoreCollectionViewCell
+            cellSeeMore.contentView.isUserInteractionEnabled = true
             return cellSeeMore
         } else {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.identifier, for: indexPath) as!
@@ -127,6 +128,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         if indexPath.row == 10  {
         let viewController = MoviesByGenreViewController()
         navigationController?.pushViewController(viewController, animated: false)
+        return
         }
     }
     

@@ -81,6 +81,16 @@ class MovieManager {
             }
         })
 }
+    func makeFavorite(id: Int, onCompletation: @escaping (_ response: Bool) ->()) {
+        APIClient.shared.requestItem(request: APIRouteOptions.makeFavorite(media_type: "movie", media_id: id, favorite: true), responseKey: "", onCompletion: {
+            (result:Result<FavoriteMovieResponse, Error>) in
+            switch (result) {
+            case .success(let response): onCompletation(response.favorite)
+            case .failure(let error): print(error)
+            }
+        })
+}
+    
     func movieDetails(id: String, onCompletation: @escaping (_ movies: Movie) ->()) {
         APIClient.shared.requestItem(request: APIRouteOptions.movieDetails(movie_id: id), responseKey: "", onCompletion: {
             (result:Result<Movie, Error>) in
@@ -90,6 +100,7 @@ class MovieManager {
             }
         })
 }
+  
     
     func retrieveData(){
         

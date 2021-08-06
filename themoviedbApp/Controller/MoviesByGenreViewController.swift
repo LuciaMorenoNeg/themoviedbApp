@@ -26,7 +26,6 @@ class MoviesByGenreViewController: UIViewController {
         movieManager.getMoviesByGenre(oneGenre: self.genre) { movies in
             self.movies = movies
     }
-  
 }
 }
 extension MoviesByGenreViewController: UITableViewDataSource {
