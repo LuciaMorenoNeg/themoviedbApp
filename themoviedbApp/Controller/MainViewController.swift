@@ -35,7 +35,7 @@ class MainViewController: UIViewController{
             self.movietableView.reloadData()
             listGenres.forEach { genre in
                
-                self.movieManager.loadInitialDataMovies(oneGenre: genre) { moviesList in
+                self.movieManager.getMoviesByGenre(oneGenre: genre) { moviesList in
                     self.movies = moviesList
                     let indexOfGenre = self.genres.firstIndex(where: {$0.name == genre.name})
                     let collections = (self.genreCollections as NSDictionary).allKeys(for: indexOfGenre!) as! [UICollectionView]
@@ -122,9 +122,11 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
         
     }
-    //func collectionView(collectionviewcell: TapMoreCollectionViewCell?, index: Int, didTappedInTableViewCell: MovieTableViewCell) {
-        
-    //}
-    
+    //func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+   //     if indexPath.row == 10  {
+   //         let newViewController = MoviesByGenreViewController()
+   //         self.navigationController?.pushViewController(newViewController, animated: true)
+ //       }
+  //  }
     
 }

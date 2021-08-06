@@ -39,7 +39,7 @@ class MovieManager {
         return genresShow
     }
     
-    func loadInitialDataMovies(oneGenre: Genre, onCompletation: @escaping (_ moviesList: [Movie]) ->()) {
+    func getMoviesByGenre(oneGenre: Genre, onCompletation: @escaping (_ moviesList: [Movie]) ->()) {
             APIClient.shared.requestItems(request: APIRouteOptions.moviesByGenre(genreId: oneGenre.getId()), responseKey: "results", onCompletion: {
                 (result:Result<[Movie], Error>) in
                 switch (result) {

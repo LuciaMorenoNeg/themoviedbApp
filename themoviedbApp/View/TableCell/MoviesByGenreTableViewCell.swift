@@ -9,6 +9,7 @@ import UIKit
 
 class MoviesByGenreTableViewCell: UITableViewCell {
 
+    
     static let identifier = "MoviesByGenreTableViewCell"
     
     static func nib() -> UINib {
