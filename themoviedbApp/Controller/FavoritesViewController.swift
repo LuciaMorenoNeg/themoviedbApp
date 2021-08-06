@@ -15,7 +15,6 @@ class FavoritesViewController:  UIViewController, UITableViewDelegate, UITableVi
     var movieManager: MovieManager = MovieManager.instance
     
     override func viewDidLoad() {
-        print("hola")
         super.viewDidLoad()
         favoritesTableView.delegate = self
         favoritesTableView.dataSource = self

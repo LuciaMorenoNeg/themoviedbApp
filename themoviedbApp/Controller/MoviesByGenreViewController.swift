@@ -11,7 +11,7 @@ import Kingfisher
 class MoviesByGenreViewController: UIViewController {
 
     @IBOutlet weak var moviesByGenreTableView: UITableView!
-    
+     
     
     var movieManager: MovieManager = MovieManager.instance
     

@@ -12,8 +12,6 @@ class SeeMoreCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var seeMoreButton: UIButton!
     
-    //@IBAction func onClick(_ sender: UIButton) {
-    //}
     
     static let identifier = "SeeMoreCollectionViewCell"
     

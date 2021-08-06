@@ -22,10 +22,6 @@
                         <color key="backgroundColor" systemColor="secondaryLabelColor"/>
                         <color key="tintColor" systemColor="tertiarySystemBackgroundColor"/>
                         <state key="normal" title="See more"/>
-                        <connections>
-                            <action selector="onClick:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Wxh-43-41Y"/>
-                            <action selector="seeMoreButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="RPm-Ft-3WJ"/>
-                        </connections>
                     </button>
                 </subviews>
             </view>

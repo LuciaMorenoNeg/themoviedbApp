@@ -122,11 +122,14 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
         
     }
-    //func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-   //     if indexPath.row == 10  {
-   //         let newViewController = MoviesByGenreViewController()
-   //         self.navigationController?.pushViewController(newViewController, animated: true)
- //       }
-  //  }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        if indexPath.row == 10  {
+        let viewController = MoviesByGenreViewController()
+        navigationController?.pushViewController(viewController, animated: false)
+        }
+    }
     
 }
+
+
